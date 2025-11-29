@@ -3190,7 +3190,7 @@ function skip(){
 //   TIMER LOGIC
 // =========================
 function resetTimer(){
-    detik = 15;
+    detik = 25;
     document.getElementById("timer").innerText = detik + "s";
     clearInterval(timer);
     
@@ -3316,4 +3316,5 @@ function toggleMusic() {
         btn.innerText = "🔇";
     }
 }
+
 
