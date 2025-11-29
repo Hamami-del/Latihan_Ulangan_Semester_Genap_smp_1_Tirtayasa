@@ -3061,7 +3061,7 @@ let mapel = "";
 let idx = 0;
 let score = 0;
 let timer;
-let detik = 15;
+let detik = 25;
 let nama = "";
 
 // Cek Dark Mode saat loading
@@ -3316,3 +3316,4 @@ function toggleMusic() {
         btn.innerText = "🔇";
     }
 }
+
