@@ -243,6 +243,156 @@ PANCASILA:[
 ],
 
 MULOK:[
+    {
+    "t": "Apa yang dimaksud dengan Silat Keserangan?",
+    "o": [
+      "Seni bela diri tradisional dari Pontang, Serang",
+      "Seni tari modern dari Banten",
+      "Olahraga bela diri dari Jepang",
+      "Permainan tradisional dari Serang"
+    ],
+    "b": 0
+  },
+  {
+    "t": "Silat Keserangan berasal dari daerah…",
+    "o": [
+      "Cikande",
+      "Keserangan, Pontang – Kabupaten Serang",
+      "Waringinkurung",
+      "Pandeglang"
+    ],
+    "b": 1
+  },
+  {
+    "t": "Fokus latihan utama Silat Keserangan adalah…",
+    "o": [
+      "Kelincahan, kekuatan, dan ketepatan gerak",
+      "Lari cepat",
+      "Lempar lembing",
+      "Renang jarak jauh"
+    ],
+    "b": 0
+  },
+  {
+    "t": "Silat Keserangan termasuk kategori pencak silat…",
+    "o": [
+      "Tradisional",
+      "Modern",
+      "Tari kontemporer",
+      "Beladiri internasional"
+    ],
+    "b": 0
+  },
+  {
+    "t": "Gerakan dasar yang biasa dipelajari dalam Silat Keserangan adalah…",
+    "o": [
+      "Kuda-kuda, pukulan, dan tendangan",
+      "Renang gaya bebas",
+      "Melompat jauh",
+      "Gerakan senam artistik"
+    ],
+    "b": 0
+  },
+  {
+    "t": "Fungsi utama Silat Keserangan pada zaman dahulu adalah…",
+    "o": [
+      "Pertunjukan hiburan",
+      "Beladiri untuk mempertahankan diri dan kampung",
+      "Olahraga kompetitif internasional",
+      "Upacara adat perkawinan"
+    ],
+    "b": 1
+  },
+  {
+    "t": "Dalam latihan, murid Silat Keserangan biasanya memulai dari…",
+    "o": [
+      "Jurusan tingkat lanjutan",
+      "Gerakan dasar",
+      "Pertarungan bebas langsung",
+      "Gerakan akrobatik"
+    ],
+    "b": 1
+  },
+  {
+    "t": "Nilai karakter yang ditekankan dalam Silat Keserangan adalah…",
+    "o": [
+      "Kesombongan",
+      "Kerja sama, disiplin, dan hormat kepada guru",
+      "Kemalasan",
+      "Tidak peduli pada aturan"
+    ],
+    "b": 1
+  },
+  {
+    "t": "Nama pelatih atau guru dalam seni silat sering disebut…",
+    "o": [
+      "Senpai",
+      "Pelatih",
+      "Guru Silat",
+      "Suhu"
+    ],
+    "b": 2
+  },
+  {
+    "t": "Silat Keserangan biasanya dipertunjukkan dalam acara…",
+    "o": [
+      "Lomba memasak",
+      "Festival budaya dan perayaan desa",
+      "Pertandingan sepak bola",
+      "Upacara bendera"
+    ],
+    "b": 1
+  },
+  {
+    "t": "Salah satu manfaat berlatih Silat Keserangan adalah…",
+    "o": [
+      "Meningkatkan kekuatan dan percaya diri",
+      "Mengurangi kemampuan fokus",
+      "Membuat tubuh cepat lelah",
+      "Menghambat pertumbuhan"
+    ],
+    "b": 0
+  },
+  {
+    "t": "Gerakan elakan dalam Silat Keserangan digunakan untuk…",
+    "o": [
+      "Menghindari serangan lawan",
+      "Menambah tinggi badan",
+      "Membuat suara keras",
+      "Mempercepat lari"
+    ],
+    "b": 0
+  },
+  {
+    "t": "Latihan pernapasan penting dalam Silat Keserangan karena…",
+    "o": [
+      "Agar bisa bernyanyi lebih keras",
+      "Menambah stamina dan kontrol gerak",
+      "Meningkatkan kemampuan menari",
+      "Mengurangi rasa lapar"
+    ],
+    "b": 1
+  },
+  {
+    "t": "Sikap hormat kepada guru silat biasanya dilakukan dengan…",
+    "o": [
+      "Melambaikan tangan",
+      "Membungkukkan badan dan memberi salam",
+      "Melompat",
+      "Berjalan mundur"
+    ],
+    "b": 1
+  },
+  {
+    "t": "Silat Keserangan merupakan warisan budaya yang harus…",
+    "o": [
+      "Diabaikan",
+      "Dilupakan",
+      "Dijaga dan dilestarikan",
+      "Dihapuskan"
+    ],
+    "b": 2
+  },
 {t:"Batik berasal dari …",o:["Malaysia","China","Indonesia","Thailand"],b:2},
 {t:"Rumah adat Sunda disebut …",o:["Joglo","Limas","Badui","Sunda"],b:2},
 {t:"Kuda lumping berasal dari …",o:["Sumatra","Jawa","Bali","NTT"],b:1},
@@ -876,3 +1026,4 @@ function toggleMusic() {
         btn.innerText = "🔇";
     }
 }
+
