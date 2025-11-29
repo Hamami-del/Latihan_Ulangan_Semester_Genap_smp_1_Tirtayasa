@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latihan Soal Ujian Semester Genap</title>
+
+<style>
+    /* === CSS UMUM === */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f1f1f1;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 40px;
+        min-height: 100vh;
+        transition: background 0.3s, color 0.3s;
+    }
+    
+    .container {
+        background: white;
+        padding: 25px;
+        width: 380px; /* Lebar mobile friendly */
+        max-width: 90%;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        text-align: center;
+        position: relative;
+        transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    /* === TOMBOL MAPEL === */
+    .mapel-btn {
+        width: 45%;
+        padding: 12px;
+        background: #7d9ce0;
+        margin: 5px;
+        border: none;
+        color: white;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: transform 0.1s;
+    }
+    .mapel-btn:active { transform: scale(0.95); }
+
+    .hidden { display: none; }
+
+    /* === PILIHAN JAWABAN === */
+    .choice {
+        text-align: left;
+        padding: 12px;
+        margin: 8px 0;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 2px solid #ddd;
+        transition: 0.2s;
+        background: #fff;
+    }
+    .choice:hover { background: #f0f4ff; border-color: #7d9ce0; }
+    
+    .correct { background: #c5ffcb !important; border-color: #2ca83c !important; color: #000;}
+    .wrong { background: #ffc5c5 !important; border-color: #d22323 !important; color: #000;}
+
+    /* === TOMBOL NAVIGASI === */
+    .nav-btn {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    #nextBtn { background: #34a853; color: white; }
+    #skipBtn { background: #ddd; color: #333; }
+    #backBtn { background: #7d9ce0; color: white; }
+    
+    /* === TABLE RANKING === */
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+    th { background-color: #7d9ce0; color: white; }
+
+    /* === INPUT NAMA === */
+    #namaInput {
+        width: 85%;
+        padding: 12px;
+        border-radius: 6px;
+        border: 1px solid #aaa;
+        margin: 10px auto;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    /* === MODE DARK (GELAP) === */
+    body.dark-mode { background: #121212; color: #e0e0e0; }
+    .container.dark-mode { background: #1e1e1e; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+    .container.dark-mode h2, .container.dark-mode h3 { color: #fff; }
+    .container.dark-mode .choice { background: #2c2c2c; border-color: #444; color: #ddd; }
+    .container.dark-mode .choice:hover { background: #3a3a3a; }
+    .container.dark-mode #namaInput { background: #2c2c2c; color: #fff; border-color: #555; }
+    .container.dark-mode table th { background: #444; }
+    .container.dark-mode table td { border-color: #444; }
+
+    /* === TOMBOL DARK MODE & RANKING === */
+    .top-icons {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        display: flex;
+        gap: 10px;
+    }
+    .icon-btn {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 50%;
+        transition: 0.2s;
+    }
+    .icon-btn:hover { background: rgba(0,0,0,0.1); }
+    .dark-mode .icon-btn:hover { background: rgba(255,255,255,0.1); }
+
+</style>
+</head>
+<body>
+
+<div class="container" id="menu">
+    <div class="top-icons">
+    <button class="icon-btn" onclick="toggleMusic()" id="musicBtn" title="Putar Musik">🔇</button>
+    
+    <button class="icon-btn" onclick="bukaRanking()" title="Lihat Ranking">🏆</button>
+    <button class="icon-btn" onclick="toggleDarkMode()" id="modeBtn" title="Mode Gelap/Terang">🌙</button>
+</div>
+
+<audio id="bgMusic" loop>
+    <source src="backsound.mp3" type="audio/mpeg">
+</audio>
+
+    <h2>Latihan Soal Ujian<br>Semester Genap</h2>
+    <p style="font-size:14px; color:#666;"><b>SMP Negeri 1 Tirtayasa</b></p>
+
+    <input id="namaInput" type="text" placeholder="Tuliskan Namamu..." autocomplete="off">
+
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; margin-top:15px; gap:5px;">
+        <button class="mapel-btn" onclick="mulai('PABP')">PABP</button>
+        <button class="mapel-btn" onclick="mulai('BINDO')">B. INDO</button>
+        <button class="mapel-btn" onclick="mulai('MTK')">MATEMATIKA</button>
+        <button class="mapel-btn" onclick="mulai('PANCASILA')">PANCASILA</button>
+        <button class="mapel-btn" onclick="mulai('MULOK')">MULOK</button>
+        <button class="mapel-btn" onclick="mulai('PJOK')">PJOK</button>
+        <button class="mapel-btn" onclick="mulai('BING')">B. INGGRIS</button>
+        <button class="mapel-btn" onclick="mulai('IPS')">IPS</button>
+        <button class="mapel-btn" onclick="mulai('IPA')">IPA</button>
+        <button class="mapel-btn" onclick="mulai('PRAKARYA')">PRAKARYA</button>
+        <button class="mapel-btn" onclick="mulai('INFORMATIKA')">INFORMATIKA</button>
+    </div>
+</div>
+
+<div class="container hidden" id="kuis">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h3 id="judulMapel" style="margin:0;">MAPEL</h3>
+        <div id="timer" style="font-weight:bold; color:#d22323;">0s</div>
+    </div>
+    <div id="namaSiswa" style="font-size:12px; color:#888; margin-bottom:10px;"></div>
+    <hr style="border:0; border-top:1px solid #ddd;">
+
+    <div id="soalArea"></div>
+
+    <div style="margin-top:20px;">
+        <button class="nav-btn" id="skipBtn" onclick="skip()">LEWATI</button>
+        <button class="nav-btn" id="backBtn" onclick="kembaliMenu()">BATAL</button>
+    </div>
+</div>
+
+<div class="container hidden" id="hasil">
+    <h2>HASIL NILAI</h2>
+    <div id="nilaiAkhir" style="font-size: 1.2em; margin: 20px 0;"></div>
+    <button class="nav-btn" style="background:#7d9ce0; color:white;" onclick="kembaliMenu()">Kembali ke Menu</button>
+    <button class="nav-btn" style="background:#ff9800; color:white;" onclick="bukaRanking()">Lihat Ranking</button>
+</div>
+
+<div class="container hidden" id="rankingArea">
+    <h3>🏆 Peringkat 10 Besar</h3>
+    <table id="tabelRanking">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Mapel</th>
+                <th>Nilai</th>
+            </tr>
+        </thead>
+        <tbody id="isiRanking">
+            </tbody>
+    </table>
+    <br>
+    <button class="nav-btn" style="background:#d22323; color:white;" onclick="resetRanking()">Hapus Data</button>
+    <button class="nav-btn" style="background:#7d9ce0; color:white;" onclick="tutupRanking()">Tutup</button>
+</div>
+
+<script src="soal.js"></script>
+
+</body>
+</html>
